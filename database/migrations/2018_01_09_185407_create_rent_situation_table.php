@@ -15,14 +15,14 @@ class CreateRentSituationTable extends Migration
     {
         Schema::create('rent_situation', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('equipment_id');
-            $table->string('equipment_name');
+            $table->string('equipment_id',20)->unique();
+            $table->string('equipment_name',20);
             $table->integer('rent_quantity');
-            $table->string('user_class');
-            $table->string('user_id');
-            $table->string('user_name');
-            $table->string('rent_start');
-            $table->string('rent_end');
+            $table->string('user_class',20);
+            $table->string('user_id',20)->unique();
+            $table->string('user_name',20);
+            $table->string('rent_start',40);
+            $table->string('rent_end',40);
             $table->timestamps();
         });
     }
