@@ -21,6 +21,7 @@ Route::get('/application_check',function (){
 });
 Auth::routes();
 
+
 Route::get('/admin', 'HomeController@index',function (){return view('admin');})->name('home');
 
 Route::get('/equipment_management', function (){return view('equipment_management');});
@@ -29,3 +30,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
 
 });
+
+Route::get('/admin', 'HomeController@index')->name('home');
+
+Route::get('/apply', 'ApplyController@index')->name('apply');
