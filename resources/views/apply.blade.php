@@ -4,7 +4,7 @@
 
 <div style="margin-top: 5%;">
 
-     <h1>體育器材借用</h1>
+     <h1>體育器材租借</h1>
      <hr class="colorgray">
 
      <form action="" method="post" role="form" class="">
@@ -50,7 +50,7 @@
 </div>
 
 
-<div class="text-center"><button type="submit" class="btn btn-theme btn-block btn-md">送出</button></div>
+<div class="text-center"><button type="submit" class="btn btn-theme btn-block btn-md">申請</button></div>
 </form>
 <hr class="colorgray">
 @endsection
