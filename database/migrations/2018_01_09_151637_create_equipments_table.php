@@ -15,8 +15,9 @@ class CreateRentsTable extends Migration
     {
         Schema::create('equipment', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('quantity');
+            $table->integer('equipment_id');
+            $table->string('equipment_name');
+            $table->integer('equipment_quantity');
             $table->timestamps();
         });
     }
