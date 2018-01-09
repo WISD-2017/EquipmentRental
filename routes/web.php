@@ -11,16 +11,42 @@
 |
 */
 
-Route::get('/admin', function () {
-    return view('admin');
-});
 
 Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/application_check',function (){
+    return view('application_check');
+});
 Auth::routes();
+
+
+Route::get('/admin', 'HomeController@index',function (){return view('admin');})->name('home');
+
+Route::get('/equipment_management', function (){return view('equipment_management');});
+Route::get('/rental_record',function (){return view('rental_record');});
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
+
+});
 
 Route::get('/admin', 'HomeController@index')->name('home');
 
 Route::get('/apply', 'ApplyController@index')->name('apply');
+
+Route::group(['prefix' => 'admin'], function() {
+
+    Route::get('/check', function (){
+        return view('application_check');
+    });
+
+    Route::get('/manage', function () {
+        return view('equipment_management');
+    });
+
+    Route::get('/record', function () {
+        return view('rental_record');
+    });
+});
+
