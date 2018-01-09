@@ -34,3 +34,19 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/admin', 'HomeController@index')->name('home');
 
 Route::get('/apply', 'ApplyController@index')->name('apply');
+
+Route::group(['prefix' => 'admin'], function() {
+
+    Route::get('/check', function (){
+        return view('application_check');
+    });
+
+    Route::get('/manage', function () {
+        return view('equipment_management');
+    });
+
+    Route::get('/record', function () {
+        return view('rental_record');
+    });
+});
+
