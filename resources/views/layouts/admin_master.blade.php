@@ -68,7 +68,6 @@
         </div>
     </div>
 </nav>
-
 <div class="list-group" style="margin-top: 10%">
 
     <a href="{{url('/admin/manage')}}" class="list-group-item list-group-item-action">器材管理</a>
