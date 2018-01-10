@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('users_class');
             $table->string('users_identity');
             $table->timestamps();
-            
+
         });
     }
 

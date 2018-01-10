@@ -16,9 +16,13 @@ class CreateEquipmentsTable extends Migration
         Schema::create('equipments', function (Blueprint $table) {
 
             $table->increments('id');
-            $table->integer('equipment_id')->unique();
-            $table->string('equipment_name',20);
-            $table->integer('equipment_quantity');
+            $table->integer('equipments_nane')->unique();
+            $table->string('equipments_unit');
+            $table->integer('equipments_leftnumber');
+            $table->integer('equipment_date');
+            $table->integer('equipment_from');
+            $table->integer('equipment_too');
+            $table->integer('equipment_rentalnumber');
             $table->timestamps();
 
         });
