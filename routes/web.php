@@ -25,28 +25,31 @@ Route::group(['prefix' => 'admin'], function () {
 
 });
 
-Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', function(){
-   return view('home');
-});
+
 
 Route::get('/apply', 'ApplyController@index')->name('apply');
 
+Route::get('/check', function (){
+    return view('application_check');
+});
+
+Route::get('/manage', function () {
+    return view('equipment_management');
+});
+
+Route::get('/record', function () {
+    return view('rental_record');
+});
 Route::group(['prefix' => 'admin'], function() {
 
-    Route::get('', 'HomeController@index',function (){return view('admin');})->name('home');
-
-    Route::get('/check', function (){
-        return view('application_check');
+    Route::get('', function (){
+        return view('admin');
     });
 
-    Route::get('/manage', function () {
-        return view('equipment_management');
-    });
 
-    Route::get('/record', function () {
-        return view('rental_record');
-    });
+
+
 });
 
