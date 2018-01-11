@@ -70,9 +70,9 @@
 </nav>
 <div class="list-group" style="margin-top: 10%">
 
-    <a href="{{url('/admin/manage')}}" class="list-group-item list-group-item-action">器材管理</a>
-    <a href="{{url('/admin/check')}}" class="list-group-item list-group-item-action">申請審核</a>
-    <a href="{{url('/admin/record')}}" class="list-group-item list-group-item-action">租借記錄</a>
+    <a href="{{url('/manage')}}" class="list-group-item list-group-item-action">器材管理</a>
+    <a href="{{url('/check')}}" class="list-group-item list-group-item-action">申請審核</a>
+    <a href="{{url('/record')}}" class="list-group-item list-group-item-action">租借記錄</a>
 </div>
 <!-- Page Content -->
 <div class="container">
