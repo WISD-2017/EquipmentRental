@@ -37,22 +37,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-
-                @if (Auth::guest())
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}" style="font-size: 14px; font-family: 王漢宗細黑體繁;">登入</a>
-                    </li>
+                @guest
+                    <a class="nav-link" style="font-size: 14px; font-family: 王漢宗細黑體繁;" href="{{ route('login') }}">登入</a>
                 @else
                     <li class="dropdown">
-                        <a href="#" class="nav-link"  data-toggle="dropdown" role="button" aria-expanded="false" style="font-size: 14px; font-family: 王漢宗細黑體繁;">
-                            歡迎! {{ Auth::user()->name }} <span class="caret"></span>
+                        <a href="#" class="nav-link" style="font-size: 14px; font-family: 王漢宗細黑體繁;" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                          歡迎!   {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
-                        <ul class="dropdown-menu" role="menu">
+                        <ul class="dropdown-menu">
                             <li>
-                                <a href="{{ route('logout') }}"
+                                <a href="{{url('') }}"
                                    onclick="event.preventDefault();
-
                                                      document.getElementById('logout-form').submit();">
                                     登出
                                 </a>
@@ -63,7 +59,7 @@
                             </li>
                         </ul>
                     </li>
-                @endif
+                @endguest
             </ul>
         </div>
     </div>
