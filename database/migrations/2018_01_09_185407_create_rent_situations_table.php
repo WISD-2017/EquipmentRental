@@ -13,7 +13,7 @@ class CreateRentSituationTable extends Migration
      */
     public function up()
     {
-        Schema::create('rent_situation', function (Blueprint $table) {
+        Schema::create('rent_situations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('equipment_id',20)->unique();
             $table->string('equipment_name',20);
@@ -34,6 +34,6 @@ class CreateRentSituationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('rent_situation');
+        Schema::dropIfExists('rent_situations');
     }
 }
