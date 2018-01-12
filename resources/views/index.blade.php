@@ -57,14 +57,12 @@
                         <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14:00</font></font></option>
                         <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15:00</font></font></option>
                         <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">16:00</font></font></option>
-                        <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17:00</font></font></option>
                     </select>
                 </center>
             </td>
             <td>
                 <center>
                     <select class="form-control">
-                        <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">08:00</font></font></option>
                         <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">09:00</font></font></option>
                         <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10:00</font></font></option>
                         <option value=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11:00</font></font></option>
