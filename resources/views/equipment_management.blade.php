@@ -43,7 +43,7 @@
                 </tr>
             </table>
         </center>
-        <hr class="">
+        <hr>
     </div>
 
 
@@ -91,7 +91,6 @@
                 </tr>
             </table>
         </center>
-        <hr class="">
     </div>
 
 

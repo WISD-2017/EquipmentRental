@@ -32,12 +32,6 @@
     <!-- Custom styles for this template -->
     <link href="css/shop-item.css" rel="stylesheet">
 
-    <style>
-        hr.style3 {
-            border-top: 1px dashed #8c8b8b;
-        }
-    </style>
-
 </head>
 
 <body data-gr-c-s-loaded="true">
