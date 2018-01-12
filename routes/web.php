@@ -19,18 +19,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
-Route::group(['prefix' => 'admin'], function () {
-    Route::get('/index', ['as' => 'admin.index', 'uses' => 'OrderController@index']);
-
-});
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
-
 Route::get('/apply', 'ApplyController@index')->name('apply');
 
+
+
+
+
+Route::post('/equipment',['as'=>'equipment','uses'=>'EquipmentController@addEquipment']);
 Route::get('/check', function (){
     return view('application_check');
 });
