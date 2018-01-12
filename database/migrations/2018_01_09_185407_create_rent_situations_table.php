@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRentSituationTable extends Migration
+class CreateRentSituationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,14 +15,15 @@ class CreateRentSituationTable extends Migration
     {
         Schema::create('rent_situations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('equipment_id',20)->unique();
-            $table->string('equipment_name',20);
-            $table->integer('rent_quantity');
-            $table->string('user_class',20);
-            $table->string('user_id',20)->unique();
-            $table->string('user_name',20);
-            $table->string('rent_start',40);
-            $table->string('rent_end',40);
+            $table->string('equipments_name');
+            $table->string('users_class');
+            $table->string('users_id');
+            $table->string('users_name');
+            $table->integer('equipments_leftnumber');
+            $table->integer('equipments_date');
+            $table->integer('equipments_from');
+            $table->integer('equipments_too');
+            $table->integer('equipments_rentalnumber');
             $table->timestamps();
         });
     }
