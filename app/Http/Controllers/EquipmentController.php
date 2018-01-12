@@ -10,5 +10,6 @@ class EquipmentController extends Controller
     public function addEquipment(Request $request)
     {
         $equipment=Equipment::create($request->all());
+        return view('equipment_management');
     }
 }

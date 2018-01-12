@@ -1,7 +1,10 @@
+<html lang="en" class="gr__blackrockdigital_github_io"><head>
 
-<html lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,7 +15,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <title>勤益科技大學-體育器材租借  @yield('title')</title>
+
+
+
+    <title>勤益科技大學-體育器材租借 @yield('title')</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -20,78 +32,64 @@
     <!-- Custom styles for this template -->
     <link href="css/shop-item.css" rel="stylesheet">
 
-
-
 </head>
 
-<body>
+<body data-gr-c-s-loaded="true">
 
-<!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
+    <div class="container" style="margin-left: -5.5%;">
         <img src="http://www.shejiye.com/uploadfile/icon/2017/0203/shejiyeicontfsx34hwwkc.png" width="60px" height="60px">
         &nbsp&nbsp&nbsp
-        <a href="{{url('/')}}" style="font-weight:bold; font-family: 微軟正黑體; font-size:22px; color: #FFFFFF; text-decoration:none;">勤益科技大學-體育器材租借</a>
+        <a href="{{url('/')}}" style="font-weight:bold; font-family: 微軟正黑體; font-size:22px; color: #FFFFFF; text-decoration:none; margin-left: -68%">勤益科技大學-體育器材租借</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-
-                @if (Auth::guest())
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}" style="font-size: 14px; font-family: 王漢宗細黑體繁;">登入</a>
-                    </li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="nav-link"  data-toggle="dropdown" role="button" aria-expanded="false" style="font-size: 14px; font-family: 王漢宗細黑體繁;">
-                            歡迎! {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-
-                                                     document.getElementById('logout-form').submit();">
-                                    登出
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                @endif
-            </ul>
-        </div>
     </div>
 </nav>
-<div class="list-group" style="margin-top: 10%">
 
-    <a href="{{url('/manage')}}" class="list-group-item list-group-item-action">器材管理</a>
-    <a href="{{url('/check')}}" class="list-group-item list-group-item-action">申請審核</a>
-    <a href="{{url('/record')}}" class="list-group-item list-group-item-action">租借記錄</a>
-</div>
-<!-- Page Content -->
-<div class="container">
-    @yield('content')
-</div>
-<!-- /.container -->
 
-<!-- Footer -->
-<!--<footer class="py-5 bg-dark">
-    <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+
+<div id="wrapper" class="toggled">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" style="margin-top: 15px">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                        <a href="#"></a>
+                        </li>
+            <li>
+                <a href="{{url('/manage')}}" style="font-family: 微軟正黑體;font-size: 20px">器材管理</a>
+            </li>
+            <li>
+                <a href="{{url('/check')}}" style="font-family: 微軟正黑體;font-size: 20px">申請審核</a>
+            </li>
+            <li>
+                <a href="{{url('/record')}}" style="font-family: 微軟正黑體;font-size: 20px">租借記錄</a>
+            </li>
+        </ul>
     </div>
-    <!-- /.container -->
-<!--</footer>-->
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    @yield('content')
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
 
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</body>
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 
-</html>
+
+
+
+</body></html>

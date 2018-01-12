@@ -11,13 +11,14 @@
 |
 */
 
+Auth::routes();
 
 Route::get('/', function () {
     return view('index');
 });
 
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/apply', 'ApplyController@index')->name('apply');
@@ -31,21 +32,24 @@ Route::get('/check', function (){
     return view('application_check');
 });
 
+
 Route::get('/manage', function () {
     return view('equipment_management');
+});
+
+Route::get('/check', function (){
+    return view('application_check');
 });
 
 Route::get('/record', function () {
     return view('rental_record');
 });
+
 Route::group(['prefix' => 'admin'], function() {
 
     Route::get('', function (){
         return view('admin');
     });
-
-
-
 
 });
 
