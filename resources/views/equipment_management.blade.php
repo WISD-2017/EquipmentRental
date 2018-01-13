@@ -68,6 +68,9 @@
                     <td>
                         <center>總數量</center>
                     </td>
+                    <td>
+                        <center></center>
+                    </td>
 
                 </tr>
                 @foreach($equipment as $equipment)
@@ -81,7 +84,9 @@
                         <td>
                             <center>{{$equipment->equipments_total}}</center>
                         </td>
-
+                        <td>
+                            <center><a href="{{route('equipment.remove',['equipment_id'=>$equipment->id]) }}" class="btn btn-xs btn-danger">刪除</a></center>
+                        </td>
                     </tr>
                 @endforeach
             </table>

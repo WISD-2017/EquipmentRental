@@ -18,4 +18,11 @@ class EquipmentController extends Controller
         $equipment=Equipment::all();
         return view('equipment_management',compact('equipment'));
     }
+
+
+    public function adminEquipmentRemove($equipment_id)
+    {
+        Equipment::destroy($equipment_id);
+        return redirect()->route('equipment.adminShowEquipment');
+    }
 }
