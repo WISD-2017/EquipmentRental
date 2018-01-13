@@ -55,6 +55,7 @@
         <br/>
         <br/>
         <br/>
+
         <center>
             <table style="font-family: 微軟正黑體">
                 <tr style="border-bottom-color: #888888">
@@ -69,22 +70,23 @@
                     </td>
 
                 </tr>
-                @foreach($equipments as $id)
-                <tr>
-                    <td>
-                        <center>{{ $equipment-> equipments_name }}</center>
-                    </td>
-                    <td>
-                        <center>{{ $equipment-> equipments_unit }}</center>
-                    </td>
-                    <td>
-                        <center>{{ $equipment-> equipments_total }}</center>
-                    </td>
+                @foreach($equipment as $equipment)
+                    <tr >
+                        <td>
+                            <center>{{$equipment->equipments_name}}</center>
+                        </td>
+                        <td>
+                            <center>{{$equipment->equipments_unit}}</center>
+                        </td>
+                        <td>
+                            <center>{{$equipment->equipments_total}}</center>
+                        </td>
 
-                </tr>
+                    </tr>
                 @endforeach
             </table>
         </center>
+
     </div>
 
 

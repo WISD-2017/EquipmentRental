@@ -9,7 +9,13 @@ class EquipmentController extends Controller
 {
     public function addEquipment(Request $request)
     {
-        $equipment=Equipment::create($request->all());
-        return view('equipment_management');
+        Equipment::create($request->all());
+        return redirect()->route('equipment.adminShowEquipment');
+    }
+
+    public function adminShowEquipment()
+    {
+        $equipment=Equipment::all();
+        return view('equipment_management',compact('equipment'));
     }
 }
