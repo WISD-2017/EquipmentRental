@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Equipment;
 class ApplyController extends Controller
 {
     //
-    public function index()
+    public function indexShowEquipment()
     {
-        return view('apply');
+        $equipment=Equipment::all();
+        return view('index',compact('equipment'));
     }
 
 }

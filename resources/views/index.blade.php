@@ -31,12 +31,13 @@
 
             </td>
         </tr>
+        @foreach($equipment as $equipment)
         <tr>
             <td>
-                <center>（器材名稱）</center>
+                <center>{{$equipment->equipments_name}}</center>
             </td>
             <td>
-                <center>（單位）</center>
+                <center>{{$equipment->equipments_unit}}</center>
             </td>
             <td>
                 <center>（剩餘數量）</center>
@@ -90,7 +91,15 @@
                 <center><button type="button" class="btn btn-secondary">申請</button></center>
             </td>
         </tr>
+        @endforeach
     </table>
+
+    <script>
+        layer.alert('已申請，待審核', {
+            skin: 'layui-layer-molv' //样式类名
+            ,closeBtn: 0
+        });
+    </script>
 </center>
 </div>
 @endsection
