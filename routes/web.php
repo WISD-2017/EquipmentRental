@@ -27,15 +27,16 @@ Route::get('/apply', 'ApplyController@index')->name('apply');
 
 
 
-Route::post('/equipment',['as'=>'equipment','uses'=>'EquipmentController@addEquipment']);
+Route::post('/equipment',['as'=>'equipment.addEquipment','uses'=>'EquipmentController@addEquipment']);
+Route::get('/manage',['as'=>'equipment.adminShowEquipment','uses'=>'EquipmentController@adminShowEquipment']);
+Route::get('/equipmentRemove/{equipment_id}',['as'=>'equipment.remove','uses'=>'EquipmentController@adminEquipmentRemove']);
+
 Route::get('/check', function (){
     return view('application_check');
 });
 
 
-Route::get('/manage', function () {
-    return view('equipment_management');
-});
+
 
 Route::get('/check', function (){
     return view('application_check');

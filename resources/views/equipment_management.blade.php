@@ -55,6 +55,7 @@
         <br/>
         <br/>
         <br/>
+
         <center>
             <table style="font-family: 微軟正黑體">
                 <tr style="border-bottom-color: #888888">
@@ -67,24 +68,30 @@
                     <td>
                         <center>總數量</center>
                     </td>
-
-                </tr>
-                @foreach($equipments as $id)
-                <tr>
                     <td>
-                        <center>{{ $equipment-> equipments_name }}</center>
-                    </td>
-                    <td>
-                        <center>{{ $equipment-> equipments_unit }}</center>
-                    </td>
-                    <td>
-                        <center>{{ $equipment-> equipments_total }}</center>
+                        <center></center>
                     </td>
 
                 </tr>
+                @foreach($equipment as $equipment)
+                    <tr >
+                        <td>
+                            <center>{{$equipment->equipments_name}}</center>
+                        </td>
+                        <td>
+                            <center>{{$equipment->equipments_unit}}</center>
+                        </td>
+                        <td>
+                            <center>{{$equipment->equipments_total}}</center>
+                        </td>
+                        <td>
+                            <center><a href="{{route('equipment.remove',['equipment_id'=>$equipment->id]) }}" class="btn btn-xs btn-danger">刪除</a></center>
+                        </td>
+                    </tr>
                 @endforeach
             </table>
         </center>
+
     </div>
 
 
