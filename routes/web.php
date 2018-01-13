@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/',['as'=>'index.indexShowEquipment','uses'=>'ApplyController@indexShowEquipment']);
 
 
 
