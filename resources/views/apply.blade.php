@@ -2,89 +2,126 @@
 @section('title','器材借用申請')
 @section('content')
 
-<div style="margin-top: 5%;">
 
-     <h1>體育器材租借</h1>
-     <hr class="colorgray">
-
-     <form action="" method="post" role="form" class="">
-     <!--班級-->
-          <div class="form-group"><center>班級</center>
-     <input type="text" name="name" class="form-control" id="user_class"/>
-     <div class="validation"></div>
-<br>
-     <!--學號-->
-     <div class="form-group"><center>學號</center>
-     <input type="text" name="name" class="form-control" id="user_id"/>
-     <div class="validation"></div>
-<br>
-     <!--姓名-->
-     <div class="form-group"><center>姓名</center>
-     <input type="text" name="name" class="form-control" id="user_name"/>
-     <div class="validation"></div>
-<br>
-     <!--體育器材-->
-     <div class="form-group"><center>體育器材</center>
-     <select name="體育器材" class="form-control">
-     <option value="體育器材"></option>
-     <option value="籃球">籃球</option>
-     <option value="羽球">羽球</option>
-     <option value="羽毛球拍">羽毛球拍</option>
-     <option value="排球">排球</option>
-     <option value="桌球">桌球</option>
-     </select>
-     <div class=""></div>
-<br>
-     <!--日期-->
-     <div class="form-group"><center>日期</center>
-          <input type="date" name="name" class="form-control" id="name" />
-     <div class=""></div>
-</div>
+     <form action="/apply" method="POST" role="form">
+     {{ csrf_field() }}
+     <!--新增器材-->
+          <div class="table table-striped">
+               <br/>
+               <br/>
+               <br/>
+               <br/>
+               <center>
+                    <table style="font-family: 微軟正黑體">
+                         <tr style="border-bottom-color: #888888">
+                              <td>
+                                   <center>器材名稱</center>
+                              </td>
+                              <td>
+                                   <center>單位</center>
+                              </td>
+                              <td>
+                                   <center>總數量</center>
+                              </td>
 
 
-<div class="text-center"><button type="submit" class="btn btn-theme btn-block btn-md">申請</button></div>
-</form>
-<hr class="colorgray">
+                              <td>
+                                   <center></center>
+                              </td>
+                         </tr>
+                         <tr>
+                              <td>
+                                   <center><input name="equipments_name" type="text" class="form-control" id="equipment_name" placeholder=""></center>
+                              </td>
+                              <td>
+                                   <center><input name="equipments_unit" type="text" class="form-control" id="equipment_unit" placeholder=""></center>
+                              </td>
+                              <td>
+                                   <center><input name="equipments_total" type="text" class="form-control" id="equipment_total" placeholder=""></center>
+                              </td>
 
 
-
-
-
-
-
-     <form class="form-horizontal">
-          <div class="form-group form-group-lg">
-               <label class="col-sm-2 control-label" for="formGroupInputLarge">班級</label>
-               <div class="col-sm-10">
-                    <input class="form-control" type="text" id="formGroupInputLarge" placeholder="">
-               </div>
-          </div>
-          <div class="form-group form-group-lg">
-               <label class="col-sm-2 control-label" for="formGroupInputLarge">學號</label>
-               <div class="col-sm-10">
-                    <input class="form-control" type="text" id="formGroupInputLarge" placeholder="">
-               </div>
-          </div>
-          <div class="form-group form-group-lg">
-               <label class="col-sm-2 control-label" for="formGroupInputLarge">姓名</label>
-               <div class="col-sm-10">
-                    <textarea name="text" class="form-control" rows="1"></textarea>
-               </div>
-          </div>
-          <div class="form-group form-group-lg">
-               <label class="col-sm-2 control-label" for="formGroupInputLarge">體育器材</label>
-               <div class="col-sm-10">
-                    <input class="form-control" type="text" id="formGroupInputLarge" placeholder="">
-               </div>
-          </div>
-          <div class="form-group form-group-lg">
-               <label class="col-sm-2 control-label" for="formGroupInputLarge">租借日期</label>
-               <div class="col-sm-10">
-                    <input class="form-control" type="text" id="formGroupInputLarge" placeholder="">
-               </div>
+                         </tr>
+                    </table>
+               </center>
+               <hr>
           </div>
      </form>
 
+     <!--取消申請-->
+     <div class="table table-striped">
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+
+          <center>
+               <table style="font-family: 微軟正黑體">
+                    <tr style="border-bottom-color: #888888">
+                         <td>
+                              <center>班級</center>
+                         </td>
+                         <td>
+                              <center>學號</center>
+                         </td>
+                         <td>
+                              <center>姓名</center>
+                         </td>
+                         <td>
+                              <center>器材名稱</center>
+                         </td>
+                         <td>
+                              <center>租借日期</center>
+                         </td>
+                         <td>
+                              <center>租借時間</center>
+                         </td>
+                         <td>
+                              <center>歸還時間</center>
+                         </td>
+                         <td>
+                              <center>租借數量</center>
+                         </td>
+                         <td>
+                              <center></center>
+                         </td>
+
+                    </tr>
+                    @foreach($apply as $apply)
+                         <tr >
+                              <td>
+                                   <center>{{$apply->users_class}}</center>
+                              </td>
+                              <td>
+                                   <center>{{$apply->users_id}}</center>
+                              </td>
+                              <td>
+                                   <center>{{$apply->users_name}}</center>
+                              </td>
+                              <td>
+                                   <center>{{$apply->equipments_name}}</center>
+                              </td>
+                              <td>
+                                   <center>{{$apply->equipments_date}}</center>
+                              </td>
+                              <td>
+                                   <center>{{$apply->equipments_from}}</center>
+                              </td>
+                              <td>
+                                   <center>{{$apply->equipments_too}}</center>
+                              </td>
+                              <td>
+                                   <center>{{$apply->equipments_rentalnumber}}</center>
+                              </td>
+                              <td>
+                                   <center><a href="{{route('unapply',['apply_id'=>$apply->id]) }}" class="btn btn-xs btn-danger">取消</a></center>
+                              </td>
+                         </tr>
+                    @endforeach
+               </table>
+          </center>
+
+     </div>
 
 
 @endsection

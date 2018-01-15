@@ -22,8 +22,10 @@ Route::get('/',['as'=>'index.indexShowEquipment','uses'=>'ApplyController@indexS
 
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/apply', 'ApplyController@index')->name('apply');
 
+Route::post('/',['as'=>'addapply','uses'=>'ApplyController@addapply']);
+Route::get('/apply', ['as'=>'showapply','uses'=>'ApplyController@showapply']);
+Route::get('/cancelapply/{apply_id}',['as'=>'unapply','uses'=>'ApplyController@cancelapply']);
 
 
 
