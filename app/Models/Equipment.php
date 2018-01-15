@@ -11,6 +11,7 @@ class Equipment extends Model
         'equipments_name',
         'equipments_unit',
         'equipments_total',
+        'equipments_rentalnumber',
     ];
 
 }

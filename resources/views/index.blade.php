@@ -40,11 +40,13 @@
                 <center>{{$equipment->equipments_unit}}</center>
             </td>
             <td>
-                <center>（剩餘數量）</center>
+                <center>{{$equipment->equipments_total}}</center>
             </td>
             <td>
                 <div class="form-group">
-                    <input type="date" class="form-control"/></div>
+                    <input type="date" id="bookdate" placeholder="2014-09-18" min="time()">
+
+                </div>
             </td>
             <td>
                 <center>
@@ -78,22 +80,37 @@
             </td>
             <td>
                 <center>
-                    <select class="form-control">
+                    <select name="rentalnumber"id="rentalnumber"class="form-control">
                         <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
                     </select>
                 </center>
             </td>
             <td>
-                <center><button type="button" class="btn btn-secondary">申請</button></center>
+                <center><button type="button" class="btn btn-secondary" >申請</button></center>
             </td>
         </tr>
         @endforeach
     </table>
 
+
+    <script>
+        function convertToISO(timebit) {
+
+            timebit.setHours(0, -timebit.getTimezoneOffset(), 0, 0);
+            // format convert and take first 10 characters of result
+            var isodate = timebit.toISOString().slice(0,10);
+            return isodate;
+        }
+
+        var bookdate = document.getElementById('bookdate');
+        var currentdate = new Date();
+        bookdate.min = convertToISO(currentdate);
+        bookdate.placeholder = bookdate.min;
+        var futuredate = new Date();
+        // go forward 7 days into the future
+        futuredate.setDate(futuredate.getDate() + 7);
+        bookdate.max = convertToISO(futuredate);
+    </script>
     <script>
         layer.alert('已申請，待審核', {
             skin: 'layui-layer-molv' //样式类名
