@@ -69,6 +69,9 @@
                         <center>總數量</center>
                     </td>
                     <td>
+                        <center>總借用數量</center>
+                    </td>
+                    <td>
                         <center></center>
                     </td>
 
@@ -83,6 +86,9 @@
                         </td>
                         <td>
                             <center>{{$equipment->equipments_total}}</center>
+                        </td>
+                        <td>
+                            <center>{{$equipment->equipments_rentalnumber}}</center>
                         </td>
                         <td>
                             <center><a href="{{route('equipment.remove',['equipment_id'=>$equipment->id]) }}" class="btn btn-xs btn-danger">刪除</a></center>
