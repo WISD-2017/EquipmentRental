@@ -33,17 +33,14 @@ Route::get('/cancelapply/{apply_id}',['as'=>'unapply','uses'=>'ApplyController@c
 Route::post('/equipment',['as'=>'equipment.addEquipment','uses'=>'EquipmentController@addEquipment']);//新增後台器材
 Route::get('/manage',['as'=>'equipment.adminShowEquipment','uses'=>'EquipmentController@adminShowEquipment']);//在後台顯示所新增的器材
 Route::get('/equipmentRemove/{equipment_id}',['as'=>'equipment.remove','uses'=>'EquipmentController@adminEquipmentRemove']);//刪除新增的器材
-
-Route::get('/check', function (){
-    return view('application_check');
-});
+Route::get('/check',['as'=>'equipment.adminShowEquipmentApplication','uses'=>'EquipmentController@adminShowEquipmentApplication']);
 
 
 
 
-Route::get('/check', function (){
-    return view('application_check');
-});
+
+
+
 
 Route::get('/record', function () {
     return view('rental_record');

@@ -61,7 +61,7 @@
                 <a href="{{route('equipment.adminShowEquipment')}}" style="font-family: 微軟正黑體;font-size: 20px">器材管理</a>
             </li>
             <li>
-                <a href="{{url('/check')}}" style="font-family: 微軟正黑體;font-size: 20px">申請審核</a>
+                <a href="{{route('equipment.adminShowEquipmentApplication')}}" style="font-family: 微軟正黑體;font-size: 20px">申請審核</a>
             </li>
             <li>
                 <a href="{{url('/record')}}" style="font-family: 微軟正黑體;font-size: 20px">租借記錄</a>
