@@ -19,10 +19,12 @@ class CreateRentSituationsTable extends Migration
             $table->string('user_class');
             $table->string('user_id');
             $table->string('user_name');
-            $table->dateTime('equipments_date');
+            $table->string('equipments_date');
             $table->string('equipments_from');
             $table->string('equipments_too');
             $table->integer('equipments_rentalnumber');
+            $table->boolean('equipments_status')->default(0);
+            $table->boolean('equipments_return')->default(0);
             $table->timestamps();
         });
     }
