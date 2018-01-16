@@ -18,8 +18,6 @@ class CreateEquipmentsTable extends Migration
             $table->increments('id');
             $table->string('equipments_name')->unique();
             $table->string('equipments_unit');
-            $table->integer('equipments_total');
-            $table->integer('equipments_rentalnumber');
             $table->timestamps();
 
         });

@@ -16,13 +16,12 @@ class CreateRentSituationsTable extends Migration
         Schema::create('rent_situations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('equipments_name');
-            $table->string('users_class');
-            $table->string('users_id');
-            $table->string('users_name');
-            $table->integer('equipments_leftnumber');
-            $table->integer('equipments_date');
-            $table->integer('equipments_from');
-            $table->integer('equipments_too');
+            $table->string('user_class');
+            $table->string('user_id');
+            $table->string('user_name');
+            $table->dateTime('equipments_date');
+            $table->string('equipments_from');
+            $table->string('equipments_too');
             $table->integer('equipments_rentalnumber');
             $table->timestamps();
         });
