@@ -37,6 +37,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+
                 @guest
                     <a class="nav-link" style="font-size: 14px; font-family: 王漢宗細黑體繁;" href="{{ route('login') }}">登入</a>
                 @else

@@ -19,14 +19,9 @@
                     <td>
                         <center>單位</center>
                     </td>
-                    <td>
-                        <center>總數量</center>
-                    </td>
 
 
-                    <td>
-                        <center></center>
-                    </td>
+
                 </tr>
                 <tr>
                     <td>
@@ -35,9 +30,7 @@
                     <td>
                         <center><input name="equipments_unit" type="text" class="form-control" id="equipment_unit" placeholder=""></center>
                     </td>
-                    <td>
-                        <center><input name="equipments_total" type="text" class="form-control" id="equipment_total" placeholder=""></center>
-                    </td>
+
 
                     <td>
                         <center><button type="submit" class="btn btn-secondary">新增</button></center>
@@ -65,15 +58,8 @@
                     <td>
                         <center>單位</center>
                     </td>
-                    <td>
-                        <center>總數量</center>
-                    </td>
-                    <td>
-                        <center>總借用數量</center>
-                    </td>
-                    <td>
-                        <center></center>
-                    </td>
+
+
 
                 </tr>
                 @foreach($equipment as $equipment)
@@ -84,12 +70,7 @@
                         <td>
                             <center>{{$equipment->equipments_unit}}</center>
                         </td>
-                        <td>
-                            <center>{{$equipment->equipments_total}}</center>
-                        </td>
-                        <td>
-                            <center>{{$equipment->equipments_rentalnumber}}</center>
-                        </td>
+
                         <td>
                             <center><a href="{{route('equipment.remove',['equipment_id'=>$equipment->id]) }}" class="btn btn-xs btn-danger">刪除</a></center>
                         </td>

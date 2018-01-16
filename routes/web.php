@@ -13,26 +13,26 @@
 
 Auth::routes();
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index')->name('home');;
 
-Route::get('/',['as'=>'index.indexShowEquipment','uses'=>'ApplyController@indexShowEquipment']);
+
+
 
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/',['as'=>'addapply','uses'=>'ApplyController@addapply']);
-Route::get('/apply', ['as'=>'showapply','uses'=>'ApplyController@showapply']);
+
+Route::post('/Apply', ['as'=>'apply.equipmentApplication','uses'=>'ApplyController@equipmentApplication']);
+Route::get('/',['as'=>'index.indexShowEquipment','uses'=>'ApplyController@indexShowEquipment']);
 Route::get('/cancelapply/{apply_id}',['as'=>'unapply','uses'=>'ApplyController@cancelapply']);
 
 
 
 
-Route::post('/equipment',['as'=>'equipment.addEquipment','uses'=>'EquipmentController@addEquipment']);
-Route::get('/manage',['as'=>'equipment.adminShowEquipment','uses'=>'EquipmentController@adminShowEquipment']);
-Route::get('/equipmentRemove/{equipment_id}',['as'=>'equipment.remove','uses'=>'EquipmentController@adminEquipmentRemove']);
+Route::post('/equipment',['as'=>'equipment.addEquipment','uses'=>'EquipmentController@addEquipment']);//新增後台器材
+Route::get('/manage',['as'=>'equipment.adminShowEquipment','uses'=>'EquipmentController@adminShowEquipment']);//在後台顯示所新增的器材
+Route::get('/equipmentRemove/{equipment_id}',['as'=>'equipment.remove','uses'=>'EquipmentController@adminEquipmentRemove']);//刪除新增的器材
 
 Route::get('/check', function (){
     return view('application_check');
