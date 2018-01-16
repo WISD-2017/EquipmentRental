@@ -25,9 +25,9 @@
                     <td>
                         <center>單位</center>
                     </td>
-
-
-
+                    <td>
+                        <center></center>
+                    </td>
                 </tr>
                 <tr>
                     <td>
@@ -65,9 +65,9 @@
                     <td>
                         <center>單位</center>
                     </td>
-
-
-
+                    <td>
+                        <center></center>
+                    </td>
                 </tr>
                 @foreach($equipment as $equipment)
                     <tr >
