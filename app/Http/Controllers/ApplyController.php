@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Apply;
+
 use App\Models\Equipment;
 class ApplyController extends Controller
 {
@@ -13,10 +15,10 @@ class ApplyController extends Controller
         $equipment=Equipment::all();
         return view('index',compact('equipment'));
     }
-    public function addapply(Request $request)
+    public function equipmentApplication(Request $request)
     {
         Apply::create($request->all());
-        return redirect()->route('showapply');
+        return redirect()->route('index.indexShowEquipment');
     }
 
     public function showapply ()

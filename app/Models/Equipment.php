@@ -10,8 +10,6 @@ class Equipment extends Model
     protected $fillable =[
         'equipments_name',
         'equipments_unit',
-        'equipments_total',
-        'equipments_rentalnumber',
     ];
 
 }
