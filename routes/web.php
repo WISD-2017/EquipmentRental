@@ -33,18 +33,18 @@ Route::get('/cancelapply/{apply_id}',['as'=>'unapply','uses'=>'ApplyController@c
 Route::post('/equipment',['as'=>'equipment.addEquipment','uses'=>'EquipmentController@addEquipment']);//新增後台器材
 Route::get('/manage',['as'=>'equipment.adminShowEquipment','uses'=>'EquipmentController@adminShowEquipment']);//在後台顯示所新增的器材
 Route::get('/equipmentRemove/{equipment_id}',['as'=>'equipment.remove','uses'=>'EquipmentController@adminEquipmentRemove']);//刪除新增的器材
+
 Route::get('/check',['as'=>'equipment.adminShowEquipmentApplication','uses'=>'EquipmentController@adminShowEquipmentApplication']);
+Route::get('/applicationPass/{id}',['as'=>'equipment.pass','uses'=>'EquipmentController@adminEquipmentApplicationPass']);
+Route::delete('/applicationFail/{id}',['as'=>'equipment.fail','uses'=>'EquipmentController@adminEquipmentApplicationFail']);
 
 
+Route::get('/no_return',['as'=>'equipment.adminShowNoReturn','uses'=>'EquipmentController@adminShowNoReturn']);
+Route::get('/no_return/{id}',['as'=>'equipment.adminReturnPass','uses'=>'EquipmentController@adminReturnPass']);
 
 
+Route::get('/record',['as'=>'equipment.adminShowRecode','uses'=>'EquipmentController@adminShowRecode']);
 
-
-
-
-Route::get('/record', function () {
-    return view('rental_record');
-});
 
 Route::group(['prefix' => 'admin'], function() {
 

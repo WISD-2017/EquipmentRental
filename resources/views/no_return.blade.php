@@ -10,7 +10,7 @@
         <center>
             <table style="font-family: 微軟正黑體">
                 <tr>
-                    <h1>租借紀錄</h1>
+                    <h1>尚未歸還</h1>
                 </tr>
                 <br>
                 <tr style="border-bottom-color: #888888">
@@ -91,15 +91,18 @@
                                 <center>{{$equipment->equipments_rentalnumber}}</center>
                             </center>
                         </td>
-
+                            <td>
+                                <a href ="{{route('equipment.adminReturnPass', ['id'=>$equipment->id])}}"class="btn btn-success " role="button">歸還</a>
+                            </td>
 
                     </tr>
 
-                @endforeach
+    @endforeach
 
-            </table>
-        </center>
+    </table>
+    </center>
 
     </div>
     <hr>
+
 @endsection

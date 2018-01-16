@@ -32,20 +32,55 @@ class EquipmentController extends Controller
 
     public function adminShowEquipmentApplication()
     {
-        $equipment=Apply::all();
+        $equipment=Apply::where('equipments_status', '0')->get();
+
 
         return view('application_check',compact('equipment'));
     }
-    public function adminEquipmentApplicationPass()
+    public function adminEquipmentApplicationPass($equipment)
     {
-        $equipment=Apply::all();
+        $Apply=Apply::find($equipment);
+        $Apply->equipments_status=true;
+        $Apply->save();
 
-        return view('application_check',compact('equipment'));
+        return redirect()->route('equipment.adminShowEquipmentApplication');
     }
     public function adminEquipmentApplicationFail()
     {
         $equipment=Apply::all();
 
         return view('application_check',compact('equipment'));
+    }
+
+
+
+    public function adminShowNoReturn()
+    {
+        $aaa=array('equipments_status'=>true ,'equipments_return'=>false);
+        $equipment=Apply::where($aaa)->get();
+
+
+        return view('no_return',compact('equipment'));
+    }
+    public function adminReturnPass($id)
+    {
+        $Apply=Apply::find($id);
+        $Apply->equipments_return=true;
+        $Apply->save();
+
+
+        return redirect()->route('equipment.adminShowNoReturn');
+    }
+
+
+
+
+    public function adminShowRecode()
+    {
+
+        $equipment=Apply::where('equipments_return', '1')->get();
+
+
+        return view('rental_record',compact('equipment'));
     }
 }

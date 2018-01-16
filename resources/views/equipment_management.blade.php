@@ -6,9 +6,15 @@
     {{ csrf_field() }}
     <!--新增器材-->
     <div class="table table-striped">
-        <br/>
-        <br/>
-        <br/>
+        <br>
+        <br>
+        <br>
+        <br>
+        <center>
+        <tr>
+            <h1>新增器材</h1>
+        </tr>
+        </center>
         <br/>
         <center>
             <table style="font-family: 微軟正黑體">
@@ -44,11 +50,12 @@
 
     <!--編輯、刪除器材-->
     <div class="table table-striped">
+      <center>
+        <tr>
+            <h1>器材列表</h1>
+        </tr>
         <br/>
-        <br/>
-        <br/>
-        <br/>
-
+      </center>
         <center>
             <table style="font-family: 微軟正黑體">
                 <tr style="border-bottom-color: #888888">
