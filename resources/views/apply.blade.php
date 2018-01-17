@@ -95,7 +95,7 @@
                                    {{ csrf_field() }}
                                    {{ method_field('DELETE') }}
                                    <td>
-                                        <button class="btn btn-danger ">拒絕</button>
+                                        <button class="btn btn-danger ">取消</button>
                                    </td>
                               </form>
 
