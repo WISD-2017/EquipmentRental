@@ -18,17 +18,23 @@ class ApplyController extends Controller
     }
     public function equipmentApplication(Request $request)
     {
-        Apply::create([
-            'user_class'=>Auth::User()->user_class,
-            'user_name' =>Auth::User()->name,
-            'user_id' =>Auth::User()->user_id,
-            'equipments_name'=>$request->equipments_name,
-            'equipments_date'=>$request->equipments_date,
-            'equipments_from'=>$request->equipments_from,
-            'equipments_too'=>$request->equipments_too,
-            'equipments_rentalnumber'=>$request->equipments_rentalnumber,
-        ]);
-        return redirect()->route('index.indexShowEquipment');
+$user = Auth::User();
+if($user==null)
+{
+    return view('auth.login');
+}
+            Apply::create([
+                'user_class'=>Auth::User()->user_class,
+                'user_name' =>Auth::User()->name,
+                'user_id' =>Auth::User()->user_id,
+                'equipments_name'=>$request->equipments_name,
+                'equipments_date'=>$request->equipments_date,
+                'equipments_from'=>$request->equipments_from,
+                'equipments_too'=>$request->equipments_too,
+                'equipments_rentalnumber'=>$request->equipments_rentalnumber,
+            ]);
+            return redirect()->route('index.indexShowEquipment');
+
     }
 
     public function showapply ()
