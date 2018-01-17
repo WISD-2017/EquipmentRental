@@ -9,11 +9,8 @@
         <br>
         <br>
         <br>
-        <br>
         <center>
-        <tr>
-            <h1>新增器材</h1>
-        </tr>
+            <h1 style="font-family: 微軟正黑體">新增器材</h1>
         </center>
         <br/>
         <center>
@@ -42,17 +39,19 @@
                         <center><button type="submit" class="btn btn-secondary">新增</button></center>
                     </td>
                 </tr>
-            </table>
+             </table>
         </center>
+        <br>
         <hr>
     </div>
     </form>
 
     <!--編輯、刪除器材-->
     <div class="table table-striped">
+        <br>
       <center>
         <tr>
-            <h1>器材列表</h1>
+            <h1 style="font-family: 微軟正黑體">器材列表</h1>
         </tr>
         <br/>
       </center>

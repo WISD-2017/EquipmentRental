@@ -4,13 +4,9 @@
         <br/>
         <br/>
         <br/>
-        <br/>
-
         <center>
             <table style="font-family: 微軟正黑體">
-                <tr>
-                    <h1>核准狀態</h1>
-                </tr>
+                    <h1 style="font-family: 微軟正黑體">核准狀態</h1>
                 <br>
                 <tr style="border-bottom-color: #888888">
                     <td>
@@ -30,7 +26,8 @@
                     </td>
                     <td>
                         <center>租借時間</center>
-                    </td>                    <td>
+                    </td>
+                    <td>
                         <center>歸還時間</center>
                     </td>
                     <td>
@@ -42,52 +39,49 @@
                     <td>
                         <center></center>
                     </td>
-
-
-
                 </tr>
 
                 @foreach($equipment as $equipment)
 
-                        <tr >
+                        <tr>
                             <td>
                                 <center>
-                                    <center>{{$equipment->user_name}}</center>
+                                    {{$equipment->user_name}}
                                </center>
                             </td>
                             <td>
                                 <center>
-                                    <center>{{$equipment->user_class}}</center>
+                                    {{$equipment->user_class}}
                                 </center>
                             </td>
                             <td>
                                 <center>
-                                    <center>{{$equipment->user_id}}</center>
+                                    {{$equipment->user_id}}
                                 </center>
                             </td>
                             <td>
                                 <center>
-                                    <center>{{$equipment->equipments_name}}</center>
+                                    {{$equipment->equipments_name}}
                                </center>
                             </td>
                             <td>
                                 <center>
-                                    <center>{{$equipment->equipments_date}}</center>
+                                    {{$equipment->equipments_date}}
                                 </center>
                             </td>
                             <td>
                                 <center>
-                                    <center>{{$equipment->equipments_from}}</center>
+                                    {{$equipment->equipments_from}}
                                </center>
                             </td>
                             <td>
                                 <center>
-                                    <center>{{$equipment->equipments_too}}</center>
-                              </center>
+                                    {{$equipment->equipments_too}}
+                                </center>
                             </td>
                             <td>
                                 <center>
-                                    <center>{{$equipment->equipments_rentalnumber}}</center>
+                                    {{$equipment->equipments_rentalnumber}}
                                 </center>
                             </td>
                             <form action="{{ route('equipment.fail', $equipment->id) }}" method="POST">
@@ -101,15 +95,8 @@
                                 </td>
                             </form>
                         </tr>
-
                 @endforeach
-
             </table>
         </center>
-
     </div>
-    <hr>
-
-
-
 @endsection

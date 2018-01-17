@@ -5,13 +5,9 @@
         <br/>
         <br/>
         <br/>
-        <br/>
-
         <center>
             <table style="font-family: 微軟正黑體">
-                <tr>
-                    <h1>租借紀錄</h1>
-                </tr>
+                    <h1 style="font-family: 微軟正黑體">租借紀錄</h1>
                 <br>
                 <tr style="border-bottom-color: #888888">
                     <td>
@@ -37,15 +33,6 @@
                     <td>
                         <center>借用數量</center>
                     </td>
-                    <td>
-                        <center></center>
-                    </td>
-                    <td>
-                        <center></center>
-                    </td>
-
-
-
                 </tr>
 
                 @foreach($equipment as $equipment)
@@ -91,15 +78,8 @@
                                 <center>{{$equipment->equipments_rentalnumber}}</center>
                             </center>
                         </td>
-
-
                     </tr>
-
                 @endforeach
-
             </table>
         </center>
-
-    </div>
-    <hr>
 @endsection
