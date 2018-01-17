@@ -35,18 +35,23 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarResponsive">
+
             <ul class="navbar-nav ml-auto">
 
                 @guest
                     <a class="nav-link" style="font-size: 14px; font-family: 王漢宗細黑體繁;" href="{{ route('login') }}">登入</a>
                 @else
+                    <a class="nav-link" style="font-size: 14px; font-family: 王漢宗細黑體繁;" href="{{ route('apply.showapply') }}">租借情形</a>
                     <li class="dropdown">
+
                         <a href="#" class="nav-link" style="font-size: 14px; font-family: 王漢宗細黑體繁;" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                           歡迎!   {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu">
+
                             <li>
                                 <a href="{{url('') }}"
                                    onclick="event.preventDefault();
