@@ -1,73 +1,9 @@
 @extends('layouts.master')
 @section('title',' ')
 @section('content')
-    <form action="/Apply" method="POST" role="form">
-    {{ csrf_field() }}
-    <!--新增器材-->
-        @if(Auth::check())
-        <div class="table table-striped">
-            <br/>
-            <br/>
-            <br/>
-            <br/>
-            <center>
-                <table style="font-family: 微軟正黑體">
-                    <tr style="border-bottom-color: #888888">
-                        <td>
-                            <center>姓名</center>
-                        </td>
-                        <td>
-                            <center>班級</center>
-                        </td>
-                        <td>
-                            <center>學號</center>
-                        </td>
-
-
-                    </tr>
-                    <tr>
-                        <div class="form-group">
-                        <td>
-                            <center><input name="user_name" type="text" class="form-control" id="user_name" value="{{Auth::user()->name}}" readonly="true"></center>
-                        </td>
-                        </div>
-                        <div class="form-group">
-                        <td>
-                            <center><input name="user_class" type="text" class="form-control" id="user_class" value="{{Auth::user()->user_class}}" readonly="true"></center>
-                        </td>
-                        </div>
-                        <div class="form-group">
-                        <td>
-                            <center><input name="user_id" type="text" class="form-control" id="user_id" value="{{Auth::user()->user_id}}" readonly="true"></center>
-                        </td>
-                        </div>
 
 
 
-
-                    </tr>
-                </table>
-            </center>
-            <hr>
-        </div>
-            @else
-            <div >
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <center>
-                    <table style="font-family: 微軟正黑體">
-                        <tr style="border-bottom-color: #888888">
-                            <td>
-                                <center>請先進行登入</center>
-                            </td>
-                        </tr>
-                    </table>
-                </center>
-                <hr>
-            </div>
-            @endif
 
 <div class="table table-striped">
 <center>
@@ -96,6 +32,8 @@
             </td>
         </tr>
         @foreach($equipment as $equipment)
+            <form action="{{route('apply.equipmentApplication')}}" method="POST" role="form">
+                {{ csrf_field() }}
         <tr>
             <div class="form-group">
             <td>
@@ -165,15 +103,16 @@
                 </center>
             </td>
             <td>
+
                 <center><button type="submit" class="btn btn-secondary" >申請</button></center>
             </td>
         </tr>
-
+            </form>
         @endforeach
     </table>
 </center>>
 </div>
-    </form>
+
 
 
 

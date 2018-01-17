@@ -45,11 +45,12 @@ class EquipmentController extends Controller
 
         return redirect()->route('equipment.adminShowEquipmentApplication');
     }
-    public function adminEquipmentApplicationFail()
+    public function adminEquipmentApplicationFail($equipment)
     {
-        $equipment=Apply::all();
+        Apply::destroy($equipment);
+        return redirect()->route('equipment.adminShowEquipmentApplication');
 
-        return view('application_check',compact('equipment'));
+
     }
 
 
