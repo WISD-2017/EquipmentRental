@@ -37,16 +37,24 @@ if($user==null)
 
     }
 
+
+
+
     public function showapply ()
     {
-        $apply = Apply::all();
-        return view('apply',compact('apply'));
+        $aaa=array('equipments_status'=>false ,'equipments_return'=>false);
+        $equipment=Apply::where($aaa)->get();
+        return view('apply',compact('equipment'));
 
     }
-    public function cancelapply($apply_id)
+
+
+    public function cancelapply($equipment_id)
     {
-        Apply::destroy($apply_id);
-        return redirect()->route('cancelapply');
+        Apply::destroy($equipment_id);
+        return redirect()->route('apply.showapply');
     }
 
 }
+
+

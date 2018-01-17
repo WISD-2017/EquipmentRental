@@ -18,15 +18,10 @@ Route::get('/', 'HomeController@index')->name('home');;
 
 
 
-
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
 Route::post('/Apply', ['as'=>'apply.equipmentApplication','uses'=>'ApplyController@equipmentApplication']);
 Route::get('/',['as'=>'index.indexShowEquipment','uses'=>'ApplyController@indexShowEquipment']);
-Route::get('/cancelapply/{apply_id}',['as'=>'unapply','uses'=>'ApplyController@cancelapply']);
-
+Route::get('/applyview',['as'=>'apply.showapply','uses'=>'ApplyController@showapply']);
+Route::delete('/cancelapply/{id}',['as'=>'cancelapply','uses'=>'ApplyController@cancelapply']);
 
 
 Route::get('/admin', function (){         //顯示進入後台畫面
