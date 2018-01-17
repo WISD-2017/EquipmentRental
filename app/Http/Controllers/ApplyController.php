@@ -42,7 +42,7 @@ if($user==null)
 
     public function showapply ()
     {
-        $aaa=array('equipments_status'=>false ,'equipments_return'=>false);
+        $aaa=array('user_name'=>Auth::User()->name,'equipments_status'=>false ,'equipments_return'=>false);
         $equipment=Apply::where($aaa)->get();
         return view('apply',compact('equipment'));
 
