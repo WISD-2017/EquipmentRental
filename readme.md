@@ -28,9 +28,9 @@
 接著在mysql建立一個資料庫及在.env檔修改DB設定，最後在cmder輸入artisan migrate指令便可打開瀏覽器使用本系統。
 
 ## 使用者
-使用者需先在http://localhost:8000/register使用學校的email註冊，註冊完即可在http://localhost:8000/進行申請。
+使用者需先在http://localhost:8000/register 使用學校的email註冊，註冊完即可在http://localhost:8000/ 進行申請。
 
 ## 管理員
-管理員是在http://localhost:8000/admin進行後台管理，目前沒有設置管理員帳號。
+管理員是在http://localhost:8000/admin 進行後台管理，目前沒有設置管理員帳號。
 
 
